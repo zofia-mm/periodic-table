@@ -4,7 +4,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
 import { ElementService } from './element.service';
 import { ElementSearchStore } from './elements-search.store';
 import { ElementsTable } from "./elements-table/elements-table";
@@ -17,7 +16,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule,
     MatSlideToggleModule, MatToolbarModule, MatInputModule,
-    MatIconModule, MatTableModule, ElementsTable],
+    MatIconModule, ElementsTable],
   providers: [ElementSearchStore],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -25,9 +24,6 @@ import { CommonModule } from '@angular/common';
 export class App implements OnInit {
   protected title = 'periodic-table';
 
-  displayedColumns: String[] = ["position"];
-  dataSource: {position: number}[] = [{ position: 1 }, {position: 2}]
-  
   elementService: ElementService = inject(ElementService);
   readonly elementStore = inject(ElementSearchStore);
 
