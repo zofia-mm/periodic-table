@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { PeriodicElement } from './periodic-element';
+import { PeriodicElement } from './elements-table/periodic-element.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
