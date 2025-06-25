@@ -599,6 +599,13 @@
     "@napi-rs/nice-win32-ia32-msvc" "1.0.1"
     "@napi-rs/nice-win32-x64-msvc" "1.0.1"
 
+"@ngrx/signals@^19.2.1":
+  version "19.2.1"
+  resolved "https://registry.npmjs.org/@ngrx/signals/-/signals-19.2.1.tgz"
+  integrity sha512-Tajd2TVjkxxyFMhnMSWLa5pAWfynjP0VM0B/BCMaLiBrwBBxybxRVENoUDU5tGyiKSax/2tBJC3+sOglmxm27A==
+  dependencies:
+    tslib "^2.3.0"
+
 "@npmcli/agent@^3.0.0":
   version "3.0.0"
   resolved "https://registry.npmjs.org/@npmcli/agent/-/agent-3.0.0.tgz"
