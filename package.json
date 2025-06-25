@@ -23,7 +23,8 @@
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.10",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "@ngrx/signals": "^19.2.1"
   },
   "devDependencies": {
     "@angular/build": "^20.0.3",
@@ -37,5 +38,11 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.2"
+  },
+  "overrides": {
+    "@ngrx/signals": {
+      "@angular/common": "$@angular/common",
+      "@angular/core": "$@angular/core"
+    }
   }
 }

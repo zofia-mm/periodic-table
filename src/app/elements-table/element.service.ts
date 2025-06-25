@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { PeriodicElement } from './periodic-element';
 import { Observable } from 'rxjs';
+import { PeriodicElement } from './periodic-element';
 
 @Injectable({
   providedIn: 'root'
