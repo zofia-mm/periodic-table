@@ -15,11 +15,8 @@ import { ElementsTable } from "./elements-table/elements-table";
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App {
   protected title = 'periodic-table';
 
   elementService: ElementService = inject(ElementService);
-  ngOnInit(): void {
-    this.elementService.getElements().forEach( console.log );
-  }
 }

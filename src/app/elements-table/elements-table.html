@@ -1,8 +1,13 @@
-<table mat-table [dataSource]="elementsStore.elements()" class="mat-elevation-z8">
+
+
+<table mat-table [dataSource]="elementsStore.entities()" class="mat-elevation-z8">
 
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef>position</th>
-    <td mat-cell *matCellDef="let element"> {{ element.position }} </td>
+    <td mat-cell *matCellDef="let element">
+      {{ element.position }}
+      <button (click)=" elementsStore.editElement( element, {position: 22} ) ">edit</button>
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="name">

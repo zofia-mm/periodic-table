@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { PeriodicElement } from './periodic-element';
 
 @Injectable({
@@ -12,6 +12,10 @@ export class ElementService {
   constructor() { }
 
   getElements(): Observable<PeriodicElement[]> {
-    return this.http.get<PeriodicElement[]>(this.url);
+    return this.http.get<PeriodicElement[]>(this.url)
+      .pipe( map( (elements) => {
+        var i = 0;
+        return elements.map( (element) => {return { ... element, id: i++} } )
+      }) );
   }
 }
