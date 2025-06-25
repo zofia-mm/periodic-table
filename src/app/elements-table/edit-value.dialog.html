@@ -1,0 +1,10 @@
+<h2 matDialogTitle> Edit element's {{ valueLabel }} </h2>
+<mat-dialog-content>
+  <mat-form-field class="w-full">
+    <input matInput [(ngModel)]="value">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton mat-dialog-close>Discard</button>
+  <button matButton [mat-dialog-close]="value()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

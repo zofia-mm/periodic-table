@@ -11,13 +11,12 @@ export const ElementsStore = signalStore(
     
     loadElements() {
       elementService.getElements().subscribe(
-        (elements) => {patchState( store, addEntities(elements) ); console.log( elements )}
+        (elements) => patchState( store, addEntities(elements) )
       )
     },
 
-    editElement( element: PeriodicElement, changes: any ) {
-      const changes1 = ( element1: PeriodicElement ) => ({ position: 22 });
-      patchState( store, updateEntity({ id: element.id, changes: changes1 }) );
+    editElement( id: number, changes: any ) {
+      patchState( store, updateEntity({ id: id, changes: changes }) );
     }
     
   }}),
