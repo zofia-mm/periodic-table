@@ -4,4 +4,4 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Components from [Angular Material](https://material.angular.dev/), styled with [TailwindCSS](https://tailwindcss.com/) version 4.1.10. State managed with [NgRx Signal Store](https://ngrx.io/) version 19.2.1.
 
-Check out this project live [here]().
+Check out this project live [here](https://zofia-mm.github.io/periodic-table/).
