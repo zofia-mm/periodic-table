@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="elementsStore.entities()" class="mat-elevation-z8">
+<table mat-table [dataSource]="elementsStore.filteredElements()" class="mat-elevation-z8">
 
   <ng-container
     *ngFor=" let columnName of ColumnNames | keyvalue "
