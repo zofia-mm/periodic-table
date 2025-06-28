@@ -10,14 +10,16 @@ import { ElementsStore } from './elements-table/elements.store';
 import { debounceTime, merge } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ElementService } from './elements-table/element.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   imports: [
     FormsModule, ReactiveFormsModule,
     ElementsTable,
-    MatSlideToggleModule, MatToolbarModule, MatInputModule,
-    MatIconModule, MatFormFieldModule ],
+    MatToolbarModule, MatInputModule, MatIconModule, MatFormFieldModule,
+    MatButtonModule
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
