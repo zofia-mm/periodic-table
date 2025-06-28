@@ -1,4 +1,4 @@
-import { Component, inject, model, signal } from "@angular/core";
+import { Component, inject, Input, model, signal } from "@angular/core";
 import { MatTableModule } from "@angular/material/table";
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from "@angular/material/button";
@@ -8,7 +8,7 @@ import { MatInputModule } from "@angular/material/input";
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { PeriodicElement } from "./periodic-element";
 import { CommonModule } from "@angular/common";
-import { merge, takeUntil } from "rxjs";
+import { merge } from "rxjs";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 export enum ColumnNames {
