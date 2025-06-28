@@ -1,10 +1,51 @@
-<h2 matDialogTitle> Edit element's {{ valueLabel }} </h2>
+@let mat_form_field_class = "w-full";
+
+<h2 matDialogTitle> Edit element's {{ columnName }} </h2>
 <mat-dialog-content>
-  <mat-form-field class="w-full">
-    <input matInput [(ngModel)]="value">
-  </mat-form-field>
+  @switch( columnName ) {
+    @case( ColumnNames.Position ) {
+      <mat-form-field [ngClass]="mat_form_field_class">
+        <input matInput [formControl]="positionInput">
+        @if( positionInput.invalid ) {
+          <mat-error> {{ positionErrorMessage() }} </mat-error>
+        }
+      </mat-form-field>
+    }
+    @case( ColumnNames.Name ) {
+      <mat-form-field [ngClass]="mat_form_field_class">
+        <input matInput [formControl]="nameInput">
+        @if( nameInput.invalid ) {
+          <mat-error> {{ nameErrorMessage() }} </mat-error>
+        }
+      </mat-form-field>
+    }
+    @case( ColumnNames.Weight ) {
+      <mat-form-field [ngClass]="mat_form_field_class">
+        <input matInput [formControl]="weightInput">
+        @if( weightInput.invalid ) {
+          <mat-error> {{ weightErrorMessage() }} </mat-error>
+        }
+      </mat-form-field>
+    }
+    @case( ColumnNames.Symbol ) {
+      <mat-form-field [ngClass]="mat_form_field_class">
+        <input matInput [formControl]="symbolInput">
+        @if( symbolInput.invalid ) {
+          <mat-error> {{ symbolErrorMessage() }} </mat-error>
+        }
+      </mat-form-field>
+    }
+  }
 </mat-dialog-content>
 <mat-dialog-actions>
   <button matButton mat-dialog-close>Discard</button>
-  <button matButton [mat-dialog-close]="value()" cdkFocusInitial>Ok</button>
+  <button matButton cdkFocusInitial
+    [mat-dialog-close]="onClose()"
+    [disabled]=" this.columnName == ColumnNames.Position ? !this.positionInput.valid :
+    this.columnName == ColumnNames.Name ? !this.nameInput.valid :
+    this.columnName == ColumnNames.Weight ? !this.weightInput.valid :
+    !this.symbolInput.valid"
+  >
+    Ok
+  </button>
 </mat-dialog-actions>
